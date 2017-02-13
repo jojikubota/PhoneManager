@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Get User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+    <link rel="stylesheet" href="/style.css" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Get User</h1>
+    </header>
+    <hr />
+    <form th:method="post" th:action="@{/user/__${user.id}__}">
+        <p>
+            <label>ID:</label>
+            <span class="data" th:text="${user.id}" />
+        </p>
+        <p>
+            <label>First Name:</label>
+            <input th:value="${user.firstname}" name="formFirst" />
+        </p>
+        <p>
+            <label>Last Name:</label>
+            <input th:value="${user.lastname}" name="formLast" />
+        </p>
+        <p>
+            <label>Title:</label>
+            <input th:value="${user.title}" name="formTitle" />
+        </p>
+        <p>
+            <label>Street:</label>
+            <input th:value="${user.address.street}" name="formStreet" />
+        </p>
+        <p>
+            <label>City:</label>
+            <input th:value="${user.address.city}" name="formCity" />
+        </p>
+        <p>
+            <label>State:</label>
+            <input th:value="${user.address.state}" name="formState" />
+        </p>
+        <p>
+            <label>Zip:</label>
+            <input th:value="${user.address.zip}" name="formZip" />
+        </p>
+        <p>
+            <label>Phones:</label>
+            <span class="data" th:each="phone,iterStat : ${user.phones}">
+                <span th:text="${phone.number}" />
+                <th:block th:if="${!iterStat.last}"> , </th:block>
+            </span>
+        </p>
+        <div class="buttons">
+            <input th:type="submit" th:value="Update" />
+        </div>
+    </form>
+    <form th:method="delete" th:action="@{/user/__${user.id}__}">
+        <div class="buttons" >
+            <input th:type="submit" th:value="Delete" />
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+    <link rel="stylesheet" href="/style.css" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Create User</h1>
+    </header>
+    <hr />
+    <form th:method="post" th:action="@{/user}">
+        <p>
+            <label>ID:</label>
+            <input name="id" />
+        </p>
+        <p>
+            <label>First Name:</label>
+            <input name="fName" />
+        </p>
+        <p>
+            <label>Last Name:</label>
+            <input name="lName" />
+        </p>
+        <p>
+            <label>Title:</label>
+            <input name="title" />
+        </p>
+        <p>
+            <label>Street:</label>
+            <input name="street" />
+        </p>
+        <p>
+            <label>City:</label>
+            <input name="city" />
+        </p>
+        <p>
+            <label>State:</label>
+            <input name="state" />
+        </p>
+        <p>
+            <label>Zip:</label>
+            <input name="zip" />
+        </p>
+        <p>
+            <label>Phones ID's*:</label>
+            <input name="pids" />
+        </p>
+        <p>
+            <label>Phones Numbers*:</label>
+            <input name="pnums" />
+        </p>
+        <p>
+            <label>Phones Descriptions*:</label>
+            <input name="pdescs" />
+        </p>
+        <p class="button">
+            *Phone data should be separated by a comma (,) and the order should be consistent.
+        </p>
+        <p>
+            <input class="button" th:type="submit" th:value="Create" />
+        </p>
+    </form>
+
+</div>
+</body>
+</html>

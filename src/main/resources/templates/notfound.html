@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>404</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+    <link rel="stylesheet" href="/style.css" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <h1>User Not Found: Status 404</h1>
+    <hr />
+    <div class="body-text">
+        <p>Sorry, the requested <span th:text="${dataType}" /> with ID <span th:text="${id}" /> does not exist.</p>
+    </div>
+</div>
+</body>
+</html>

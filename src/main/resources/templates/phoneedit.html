@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Get Phone</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
+    <link rel="stylesheet" href="/style.css" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Get Phone</h1>
+    </header>
+    <hr />
+    <form th:method="post" th:action="@{/phone/__${phone.id}__}">
+        <p>
+            <label>ID:</label>
+            <span class="data" th:text="${phone.id}" />
+        </p>
+        <p>
+            <label>Number:</label>
+            <input th:value="${phone.number}" name="formNum" />
+        </p>
+        <p>
+            <label>Description:</label>
+            <input th:value="${phone.description}" name="formDesc" />
+        </p>
+        <p>
+            <label>Street:</label>
+            <input th:value="${phone.address.street}" name="formStreet" />
+        </p>
+        <p>
+            <label>City:</label>
+            <input th:value="${phone.address.city}" name="formCity" />
+        </p>
+        <p>
+            <label>State:</label>
+            <input th:value="${phone.address.state}" name="formState" />
+        </p>
+        <p>
+            <label>Zip:</label>
+            <input th:value="${phone.address.zip}" name="formZip" />
+        </p>
+        <p>
+            <label>Users:</label>
+            <br />
+            <span class="user" th:each="user : ${phone.users}">
+                <span class="userid" th:text="${user.id}" />:
+                <span class="username" th:text="${user.firstname}" />
+                <input class="x" type="button" th:method="delete" th:onclick="|location.href='/phone/user/${user.id}/${phone.id}'|" value="X" />
+                <br />
+            </span>
+        </p>
+        <p>
+            <input class="button" th:type="submit" th:value="Update" />
+        </p>
+    </form>
+    <form th:method="delete" th:action="@{/phone/__${phone.id}__}">
+        <p>
+            <input class="button" th:type="submit" th:value="Delete" />
+        </p>
+    </form>
+    <hr />
+    <h3>Add user</h3>
+    <form th:method="post" th:action="@{/phone/user/__${phone.id}__}">
+        <p>
+            <label>User ID:</label>
+            <input name="addId" />
+        </p>
+        <p>
+            <label>First Name:</label>
+            <input name="addFirst" />
+        </p>
+        <p>
+            <label>Last Name:</label>
+            <input name="addLast" />
+        </p>
+        <p>
+            <input class="button" th:type="submit" th:value="Add" />
+        </p>
+    </form>
+
+</div> <!-- end of container -->
+</body>
+</html>

@@ -1,0 +1,55 @@
+*{
+    margin:auto auto;
+}
+
+.container {
+    width: 960px;
+}
+
+h1, h3{
+    text-align: center;
+}
+
+label{
+    width:150px;
+    margin-left:100px;
+    text-align:right;
+}
+
+input, .data{
+    width:350px;
+    margin-left:30px;
+}
+
+.buttons{
+    margin-left:250px;
+    margin-top:20px;
+    float:left;
+}
+
+.button{
+    margin-left:280px;
+    margin-top:20px;
+}
+
+.body-text{
+    margin:30px 100px;
+}
+
+.x{
+    width:30px;
+}
+
+.user{
+    margin-left:280px;
+}
+
+.userid{
+    width:30px;
+    text-align:left;
+}
+
+.username{
+    width:60px;
+    text-align:left;
+}
